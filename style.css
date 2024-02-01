@@ -91,3 +91,22 @@ transition: opacity 0.5s ease, color 1s ease;
     margin-top: 10px;
     color: #4CAF50;
 }
+.social-icons {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    display: flex;
+    gap: 10px;
+}
+
+.social-icons a {
+    font-size: 24px;
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+
+}
+
+.social-icons a:hover {
+    color: #4CAF50;
+}
