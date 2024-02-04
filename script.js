@@ -1,4 +1,9 @@
 document.addEventListener("DOMContentLoaded", function() {
+    const hireButton = document.querySelector('.hire-btn');
+    setInterval(() => {
+        hireButton.classList.toggle('blink');
+    }, 500);
+   
     const letters = document.querySelectorAll('#animated-text span');
     const colors = ["red", "blue", "green", "yellow", "purple", "orange"];
     let colorIndex = 0;
