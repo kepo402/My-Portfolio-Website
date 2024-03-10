@@ -35,4 +35,24 @@ document.addEventListener("DOMContentLoaded", function() {
 
     // Set interval for letter reveal
     const revealInterval = setInterval(revealLetter, 500);
+
+    // Project link click event listener
+    const projectLink = document.querySelector('a[href="projects.html"]');
+    projectLink.addEventListener("click", function(event) {
+        event.preventDefault(); // Prevent default link behavior
+
+        // Fade out the page content
+        document.body.style.transition = 'opacity 3s ease';
+        document.body.style.opacity = 0;
+
+        // Redirect to projects page after 3 to 4 seconds
+        setTimeout(function() {
+            window.location.href = "projects.html"; // Redirect to projects page
+        }, 1000); // Adjust timeout to desired duration (3 to 4 seconds)
+    });
+
+    // Maintain opacity at 0 until redirection
+    window.addEventListener("beforeunload", function() {
+        document.body.style.opacity = 0;
+    });
 });
