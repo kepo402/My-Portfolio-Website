@@ -3,13 +3,14 @@ document.addEventListener("DOMContentLoaded", function() {
     setInterval(() => {
         hireButton.classList.toggle('blink');
     }, 500);
-   
+
     const letters = document.querySelectorAll('#animated-text span');
-    const colors = ["red", "blue", "green", "yellow", "purple", "orange"];
+    const colorsLight = ["black", "red", "blue", "green", "yellow", "purple", "orange"];
+    const colorsDark = ["white", "red", "blue", "green", "yellow", "purple", "orange"];
     let colorIndex = 0;
 
     // Color change function
-    function changeColor() {
+    function changeColor(colors) {
         for (let letter of letters) {
             letter.style.color = colors[colorIndex];
         }
@@ -17,10 +18,16 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 
     // Initial color change
-    changeColor();
+    changeColor(colorsLight);
 
     // Set interval for continuous color change
-    setInterval(changeColor, 1000);
+    setInterval(() => {
+        if (document.body.classList.contains('dark-mode')) {
+            changeColor(colorsDark);
+        } else {
+            changeColor(colorsLight);
+        }
+    }, 1000);
 
     // Letter reveal function
     let count = 0;
@@ -41,6 +48,9 @@ document.addEventListener("DOMContentLoaded", function() {
     projectLink.addEventListener("click", function(event) {
         event.preventDefault(); // Prevent default link behavior
 
+        // Change background color to white
+        document.body.style.backgroundColor = 'white';
+
         // Fade out the page content
         document.body.style.transition = 'opacity 3s ease';
         document.body.style.opacity = 0;
@@ -49,6 +59,17 @@ document.addEventListener("DOMContentLoaded", function() {
         setTimeout(function() {
             window.location.href = "projects.html"; // Redirect to projects page
         }, 1000); // Adjust timeout to desired duration (3 to 4 seconds)
+    });
+
+    // Toggle between light and dark mode
+    const modeToggle = document.getElementById('modeToggle');
+    modeToggle.addEventListener('click', function() {
+        document.body.classList.toggle('dark-mode');
+        if (document.body.classList.contains('dark-mode')) {
+            document.body.style.backgroundColor = 'black'; // Set background to black in dark mode
+        } else {
+            document.body.style.backgroundColor = 'white'; // Set background to white in light mode
+        }
     });
 
     // Maintain opacity at 0 until redirection
