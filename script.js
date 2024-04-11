@@ -22,7 +22,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
     // Set interval for continuous color change
     setInterval(() => {
-        if (document.body.classList.contains('dark-mode')) {
+        if (document.body.style.backgroundColor === 'black') {
             changeColor(colorsDark);
         } else {
             changeColor(colorsLight);
@@ -48,12 +48,13 @@ document.addEventListener("DOMContentLoaded", function() {
     projectLink.addEventListener("click", function(event) {
         event.preventDefault(); // Prevent default link behavior
 
-        // Change background color to white
-        document.body.style.backgroundColor = 'white';
-
         // Fade out the page content
         document.body.style.transition = 'opacity 3s ease';
         document.body.style.opacity = 0;
+
+        // Change background color to white and text color to black
+        document.body.style.backgroundColor = 'white';
+        document.body.style.color = 'black';
 
         // Redirect to projects page after 3 to 4 seconds
         setTimeout(function() {
@@ -64,11 +65,13 @@ document.addEventListener("DOMContentLoaded", function() {
     // Toggle between light and dark mode
     const modeToggle = document.getElementById('modeToggle');
     modeToggle.addEventListener('click', function() {
-        document.body.classList.toggle('dark-mode');
-        if (document.body.classList.contains('dark-mode')) {
-            document.body.style.backgroundColor = 'black'; // Set background to black in dark mode
+        const currentBgColor = document.body.style.backgroundColor;
+        if (currentBgColor === 'black') {
+            document.body.style.backgroundColor = 'white';
+            document.body.style.color = 'black';
         } else {
-            document.body.style.backgroundColor = 'white'; // Set background to white in light mode
+            document.body.style.backgroundColor = 'black';
+            document.body.style.color = 'white';
         }
     });
 
@@ -77,3 +80,7 @@ document.addEventListener("DOMContentLoaded", function() {
         document.body.style.opacity = 0;
     });
 });
+
+
+
+
