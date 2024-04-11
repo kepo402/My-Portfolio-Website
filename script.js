@@ -22,10 +22,13 @@ document.addEventListener("DOMContentLoaded", function() {
 
     // Set interval for continuous color change
     setInterval(() => {
-        if (document.body.style.backgroundColor === 'black') {
+        const currentBgColor = window.getComputedStyle(document.body).getPropertyValue('background-color');
+        if (currentBgColor === 'rgb(0, 0, 0)') {
             changeColor(colorsDark);
+            updateSocialIconsColor('white');
         } else {
             changeColor(colorsLight);
+            updateSocialIconsColor('black');
         }
     }, 1000);
 
@@ -65,13 +68,15 @@ document.addEventListener("DOMContentLoaded", function() {
     // Toggle between light and dark mode
     const modeToggle = document.getElementById('modeToggle');
     modeToggle.addEventListener('click', function() {
-        const currentBgColor = document.body.style.backgroundColor;
-        if (currentBgColor === 'black') {
+        const currentBgColor = window.getComputedStyle(document.body).getPropertyValue('background-color');
+        if (currentBgColor === 'rgb(0, 0, 0)') {
             document.body.style.backgroundColor = 'white';
             document.body.style.color = 'black';
+            updateSocialIconsColor('black');
         } else {
             document.body.style.backgroundColor = 'black';
             document.body.style.color = 'white';
+            updateSocialIconsColor('white');
         }
     });
 
@@ -79,7 +84,17 @@ document.addEventListener("DOMContentLoaded", function() {
     window.addEventListener("beforeunload", function() {
         document.body.style.opacity = 0;
     });
+    
+    // Function to update social icons color
+    function updateSocialIconsColor(color) {
+        const socialIcons = document.querySelectorAll('.social-icons a');
+        socialIcons.forEach(icon => {
+            icon.style.color = color;
+        });
+    }
 });
+
+
 
 
 
