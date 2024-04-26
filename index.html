@@ -1,271 +1,153 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
-    <title>Yinka's Portfolio</title>
     <style>
-        /* Resetting default styles and setting global styles */
-        body, html {
+        /* CSS Styles */
+        body {
+            font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            height: 100%;
-            background-color: #f7f7f7;
+            background-color: #f4f4f4;
             color: #333;
-            font-family: Arial, sans-serif;
-            scroll-behavior: smooth; /* Smooth scrolling behavior */
-            scroll-padding-top: 60px; /* Adjust this value based on header height */
-            transition: background-color 0.3s ease; /* Smooth transition for background color */
+            transition: background-color 0.5s, color 0.5s;
         }
-
-        .dark-mode {
-            background-color: #333;
-            color: #fff;
-        }
-
+        
         .header {
             display: flex;
             justify-content: space-between;
             align-items: center;
             padding: 20px;
-            background-color: #fff;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            z-index: 999;
-        }
-
-        .hire-btn {
-            background-color: #007bff;
+            background-color: #333;
             color: #fff;
-            border: none;
+        }
+        
+        .hire-btn {
+            background-color: #4CAF50;
+            color: white;
             padding: 10px 20px;
-            border-radius: 5px;
+            border: none;
             cursor: pointer;
-            transition: background-color 0.3s ease;
+            border-radius: 5px;
+            font-size: 16px;
+            transition: background-color 0.3s;
         }
-
+        
         .hire-btn:hover {
-            background-color: #0056b3;
+            background-color: #45a049;
         }
-
-        .nav-links {
-            display: flex;
-        }
-
+        
         .nav-links a {
-            margin-right: 20px;
-            color: #333;
+            color: #fff;
             text-decoration: none;
-            transition: color 0.3s ease;
+            margin-right: 20px;
+            transition: color 0.3s;
         }
-
+        
         .nav-links a:hover {
-            color: #007bff;
+            color: #ddd;
         }
-
+        
         .mode-toggle {
             cursor: pointer;
-            transition: color 0.3s ease;
         }
-
-        .mode-toggle:hover {
-            color: #007bff;
-        }
-
+        
         .main-content {
-            padding-top: 100px;
             text-align: center;
+            padding: 50px;
         }
-
+        
         .profile-image img {
+            width: 150px;
+            height: 150px;
             border-radius: 50%;
-            width: 200px;
-            height: 200px;
-            object-fit: cover;
-            border: 5px solid #fff;
-            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            border: 5px solid #4CAF50;
+            margin-bottom: 20px;
+            transition: border-color 0.3s;
         }
-
+        
+        .profile-image img:hover {
+            border-color: #45a049;
+        }
+        
         #animated-text {
-            margin-top: 20px;
-            font-size: 24px;
+            font-size: 32px;
+            margin-top: 0;
         }
-
-        #projects {
+        
+        .projects {
+            padding: 50px;
+            text-align: center;
+        }
+        
+        .projects h2 {
+            font-size: 24px;
+            margin-bottom: 30px;
+        }
+        
+        .project {
             background-color: #fff;
-            padding: 80px 0;
-        }
-
-        .project-section {
-            text-align: center;
-        }
-
-        .project-box {
-            margin-top: 40px;
-            display: inline-block;
-            position: relative;
-            overflow: hidden;
             border-radius: 10px;
-            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease;
-        }
-
-        .project-box:hover {
-            transform: translateY(-10px);
-        }
-
-        .project-box img {
-            width: 100%;
-            height: auto;
-        }
-
-        .overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.5);
-            opacity: 0;
-            transition: opacity 0.3s ease;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .project-box:hover .overlay {
-            opacity: 1;
-        }
-
-        .project-info {
-            color: #fff;
-            text-align: center;
-        }
-
-        .project-info h3 {
-            margin-bottom: 10px;
-        }
-
-        .project-info p {
-            font-size: 14px;
+            padding: 20px;
             margin-bottom: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            transition: box-shadow 0.3s;
         }
-
-        .project-info a {
-            color: #007bff;
-            text-decoration: none;
-            margin-right: 10px;
-            transition: color 0.3s ease;
+        
+        .project:hover {
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
         }
-
-        .project-info a:hover {
-            color: #0056b3;
+        
+        .project h3 {
+            margin-top: 0;
         }
-
-        #contact {
-            background-color: #f7f7f7;
-            padding: 80px 0;
-        }
-
-        .contact-section {
-            text-align: center;
-        }
-
-        .form-group {
-            margin-bottom: 20px;
-        }
-
-        label {
-            display: block;
-            margin-bottom: 5px;
-        }
-
-        input,
-        textarea {
-            width: 100%;
-            padding: 10px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-        }
-
-        button {
-            background-color: #007bff;
-            color: #fff;
-            border: none;
-            padding: 10px 20px;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
-        }
-
-        button:hover {
-            background-color: #0056b3;
-        }
-
+        
         .social-icons {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            z-index: 999;
+            text-align: center;
+            padding: 20px;
         }
-
+        
         .social-icons a {
-            color: #007bff;
+            color: #333;
             text-decoration: none;
+            margin: 0 10px;
             font-size: 24px;
-            margin-left: 10px;
-            transition: color 0.3s ease;
+            transition: color 0.3s;
         }
-
+        
         .social-icons a:hover {
-            color: #0056b3;
+            color: #4CAF50;
         }
-
-        /* Animation classes */
-        .animated {
-            animation-duration: 1s;
-            animation-fill-mode: both;
-        }
-
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        .fadeInUp {
-            animation-name: fadeInUp;
+        
+        .dark-mode {
+            background-color: #111;
+            color: #fff;
         }
     </style>
+    <title>Yinka's Portfolio</title>
 </head>
+
 <body>
     <div class="header">
         <div class="hire-me">
-            <button class="hire-btn">Hire Me</button>
+            <a href="contact.html"><button class="hire-btn">Hire Me</button></a>
         </div>
-        <nav class="nav-links">
-            <a href="#home">Home</a>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
             <a href="#projects">Projects</a>
-            <a href="#contact">Contact</a>
-            <a href="Olayinka Alawode CV.pdf">Resume</a>
-        </nav>
+            <a href="contact.html">Contact</a>
+            <a href="resume.html">Resume</a>
+        </div>
         <!-- Moon icon for toggling light/dark mode -->
         <div class="mode-toggle" id="modeToggle">
             <i class="fas fa-moon"></i>
         </div>
     </div>
 
-    <div id="home" class="main-content">
+    <div class="main-content">
         <div class="profile-image">
             <img src="yinka.jpg" alt="Yinka's Image">
         </div>
@@ -275,45 +157,18 @@
         </h1>
     </div>
 
-    <section id="projects">
-        <div class="project-section">
-            <h2>My Projects</h2>
-            <div class="project-box">
-                <img src="acadmictrakker.png" alt="acadmictrakker image">
-                <div class="overlay">
-                    <div class="project-info">
-                        <h3>Academic Tracker</h3>
-                        <p>This project is for tracking study/course progress in your academics</p>
-                        <a href="https://github.com/kepo402" target="_blank">Github</a>
-                        <a href="https:project1.com" target="_blank">Website</a>
-                    </div>
-                </div>
-            </div>
+    <div id="projects" class="projects">
+        <h2>Projects</h2>
+        <div class="project">
+            <h3>Project Title 1</h3>
+            <p>Description of the project goes here. It should be brief and highlight the key features and technologies used.</p>
         </div>
-    </section>
-
-    <section id="contact">
-        <div class="contact-section">
-            <div class="main-content">
-                <h1>Contact Me</h1>
-                <form id="contact-form" action="https://formspree.io/f/mpzvllyr" method="POST">
-                    <div class="form-group">
-                        <label for="name">Name:</label>
-                        <input type="text" id="name" name="name" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="email">Email:</label>
-                        <input type="email" id="email" name="_replyto" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="message">Message:</label>
-                        <textarea id="message" name="message" rows="5" required></textarea>
-                    </div>
-                    <button type="submit" id="send-email">Send Email</button>
-                </form>
-            </div>
+        <div class="project">
+            <h3>Project Title 2</h3>
+            <p>Description of the project goes here. It should be brief and highlight the key features and technologies used.</p>
         </div>
-    </section>
+        <!-- Add more projects as needed -->
+    </div>
 
     <div class="social-icons">
         <a href="https://github.com/kepo402" target="_blank"><i class="fab fa-github"></i></a>
@@ -325,41 +180,37 @@
     <script>
         document.addEventListener("DOMContentLoaded", function() {
             const hireButton = document.querySelector('.hire-btn');
-            const letters = document.querySelectorAll('#animated-text span');
-            const modeToggle = document.getElementById('modeToggle');
-            const colorsLight = ["black", "red", "blue", "green", "yellow", "purple", "orange"];
-            const colorsDark = ["white", "red", "blue", "green", "yellow", "purple", "orange"];
-            let colorIndex = 0;
-            let count = 0;
-            let revealInterval;
-
-            // Function to make hire button blink
             setInterval(() => {
                 hireButton.classList.toggle('blink');
             }, 500);
-
-            // Function to change color of animated text
+        
+            const letters = document.querySelectorAll('#animated-text span');
+            const colorsLight = ["black", "red", "blue", "green", "yellow", "purple", "orange"];
+            const colorsDark = ["white", "red", "blue", "green", "yellow", "purple", "orange"];
+            let colorIndex = 0;
+        
+            // Color change function
             function changeColor(colors) {
                 for (let letter of letters) {
                     letter.style.color = colors[colorIndex];
                 }
                 colorIndex = (colorIndex + 1) % colors.length;
             }
-
+        
             // Initial color change
             changeColor(colorsLight);
-
+        
             // Set interval for continuous color change
             setInterval(() => {
-                const currentBgColor = window.getComputedStyle(document.body).getPropertyValue('background-color');
-                if (currentBgColor === 'rgb(0, 0, 0)') {
+                if (document.body.classList.contains('dark-mode')) {
                     changeColor(colorsDark);
                 } else {
                     changeColor(colorsLight);
                 }
             }, 1000);
-
-            // Function to reveal letters of animated text
+        
+            // Letter reveal function
+            let count = 0;
             function revealLetter() {
                 if (count < letters.length) {
                     letters[count].style.opacity = 1;
@@ -368,75 +219,49 @@
                     clearInterval(revealInterval);
                 }
             }
-
+        
             // Set interval for letter reveal
-            revealInterval = setInterval(revealLetter, 500);
-
-            // Function to toggle dark mode
+            const revealInterval = setInterval(revealLetter, 500);
+        
+            // Project link click event listener
+            const projectLink = document.querySelector('a[href="#projects"]');
+            projectLink.addEventListener("click", function(event) {
+                event.preventDefault(); // Prevent default link behavior
+        
+                // Change background color to white
+                document.body.style.backgroundColor = 'white';
+        
+                // Fade out the page content
+                document.body.style.transition = 'opacity 3s ease';
+                document.body.style.opacity = 0;
+        
+                // Redirect to projects section after 3 to 4 seconds
+                setTimeout(function() {
+                    document.getElementById('projects').scrollIntoView(); // Scroll to projects section
+                    document.body.style.backgroundColor = ''; // Revert background color
+                    document.body.style.opacity = 1; // Revert opacity
+                }, 3000); // Adjust timeout to desired duration (3 to 4 seconds)
+            });
+        
+            // Toggle between light and dark mode
+            const modeToggle = document.getElementById('modeToggle');
             modeToggle.addEventListener('click', function() {
                 document.body.classList.toggle('dark-mode');
-            });
-
-            // Smooth scrolling for internal links with animation
-            const navLinks = document.querySelectorAll('.nav-links a');
-            navLinks.forEach(link => {
-                link.addEventListener('click', function(event) {
-                    event.preventDefault();
-                    const targetId = this.getAttribute('href').substring(1);
-                    const targetSection = document.getElementById(targetId);
-                    if (targetSection) {
-                        targetSection.scrollIntoView({ behavior: 'smooth' });
-                        animateSection(targetSection);
-                    }
-                });
-            });
-
-            // Function to handle scroll event
-            function handleScroll() {
-                const projectSection = document.querySelector('.project-section');
-                const contactSection = document.querySelector('.contact-section');
-
-                if (isInViewport(projectSection)) {
-                    animateSection(projectSection);
+                if (document.body.classList.contains('dark-mode')) {
+                    document.body.style.backgroundColor = 'black'; // Set background to black in dark mode
+                } else {
+                    document.body.style.backgroundColor = 'white'; // Set background to white in light mode
                 }
-
-                if (isInViewport(contactSection)) {
-                    animateSection(contactSection);
-                }
-            }
-
-            // Add scroll event listener
-            window.addEventListener('scroll', handleScroll);
-
-            // Call handleScroll initially to check if sections are in viewport
-            handleScroll();
+            });
+        
+            // Maintain opacity at 0 until redirection
+            window.addEventListener("beforeunload", function() {
+                document.body.style.opacity = 0;
+            });
         });
-
-        // Function to check if an element is in the viewport
-        function isInViewport(element) {
-            const rect = element.getBoundingClientRect();
-            return (
-                rect.top >= 0 &&
-                rect.left >= 0 &&
-                rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
-                rect.right <= (window.innerWidth || document.documentElement.clientWidth)
-            );
-        }
-
-        // Function to animate a section
-        function animateSection(section) {
-            const sectionTitle = section.querySelector('h2');
-            const sectionParagraphs = section.querySelectorAll('p');
-
-            // Add animation class to title
-            sectionTitle.classList.add('animated', 'fadeInUp');
-
-            // Add animation class to paragraphs
-            sectionParagraphs.forEach(paragraph => {
-                paragraph.classList.add('animated', 'fadeInUp');
-            });
-        }
     </script>
+
 </body>
+
 </html>
 
