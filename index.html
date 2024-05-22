@@ -1,253 +1,68 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
-    
-    <title>Yinka's Portfolio</title>
-    <style>
-        /* CSS Styles */
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f4;
-            color: #333;
-            transition: background-color 0.5s, color 0.5s;
-        }
-
-        .header {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            z-index: 1000;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 20px;
-            background-color: #333;
-            color: #fff;
-        }
-
-        .nav-links {
-            display: flex;
-        }
-
-        .nav-links a {
-            color: #fff;
-            text-decoration: none;
-            margin-right: 20px;
-            transition: color 0.3s;
-        }
-
-        .nav-links a:hover {
-            color: #ddd;
-        }
-
-        .mode-toggle {
-    position: absolute;
-    right: 20px;
-    top: 50%;
-    transform: translateY(-50%);
-    z-index: 1001; /* Adjust z-index as needed */
-}
-
-
-
-        .main-content {
-            text-align: center;
-            padding: 120px 20px 50px;
-            margin-top: 70px; /* Adjusted margin for fixed navigation */
-        }
-
-        .profile-image img {
-            width: 150px;
-            height: 150px;
-            border-radius: 50%;
-            border: 5px solid #4CAF50;
-            margin-bottom: 20px;
-            transition: border-color 0.3s;
-        }
-
-        .profile-image img:hover {
-            border-color: #45a049;
-        }
-
-        #animated-text {
-            font-size: 32px;
-            margin-top: 0;
-        }
-
-        .projects {
-            padding: 50px;
-            text-align: center;
-            margin-top: 100vh; /* Push projects section below viewport */
-        }
-
-        .projects h2 {
-            font-size: 24px;
-            margin-bottom: 30px;
-        }
-
-        .project {
-            background-color: #fff;
-            border-radius: 10px;
-            padding: 20px;
-            margin-bottom: 20px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            transition: box-shadow 0.3s;
-        }
-
-        .project:hover {
-            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
-        }
-
-        .project h3 {
-            margin-top: 0;
-        }
-
-        .social-icons {
-            text-align: center;
-            padding: 20px;
-            margin-top: 100vh; /* Push social icons below viewport */
-        }
-
-        .social-icons a {
-            color: #333;
-            text-decoration: none;
-            margin: 0 10px;
-            font-size: 24px;
-            transition: color 0.3s;
-        }
-
-        .social-icons a:hover {
-            color: #4CAF50;
-        }
-
-        .dark-mode {
-            background-color: #111;
-            color: #fff;
-        }
-
-        /* Smooth scrolling */
-        html {
-            scroll-behavior: smooth;
-        }
-    </style>
+    <title>Olayinka's Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
-
-<body>
-    <div class="header">
-        <div class="nav-links">
-            <a href="#home">Home</a>
-            <a href="#projects">Projects</a>
-            <a href="#contact">Contact</a>
-            <a href="#resume">Resume</a>
+<body class="dark-mode">
+    <nav>
+        <div class="logo">Olayinka</div>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+        <div class="theme-toggle">
+            <span id="moon" onclick="toggleTheme()">🌙</span>
+            <span id="sun" onclick="toggleTheme()">☀️</span>
         </div>
-        <!-- Moon icon for toggling light/dark mode -->
-        <div class="mode-toggle" id="modeToggle">
-            <i class="fas fa-moon"></i>
-        </div>
-    </div>
+    </nav>
 
-    <div id="home" class="main-content">
-        <div class="profile-image">
-            <img src="yinka.jpg" alt="Yinka's Image">
+    <section id="home">
+        <div class="intro-text">
+            <span id="animated-text"></span>
         </div>
-        <h1 id="animated-text">
-            <span>I</span> <span>am</span> <span>Olayinka,</span> <span>a</span> <span>passionate</span> <span>Software</span>
-            <span>Developer</span>
-        </h1>
-    </div>
+    </section>
 
-    <div id="projects" class="projects">
+    <section id="skills">
+        <h2>Skills</h2>
+        <!-- Skills content -->
+    </section>
+
+    <section id="projects">
         <h2>Projects</h2>
-        <div class="project">
-            <h3>Project Title 1</h3>
-            <p>Description of the project goes here. It should be brief and highlight the key features and technologies used.</p>
-        </div>
-        <div class="project">
-            <h3>Project Title 2</h3>
-            <p>Description of the project goes here. It should be brief and highlight the key features and technologies used.</p>
-        </div>
-        <!-- Add more projects as needed -->
-    </div>
+        <!-- Projects content -->
+    </section>
 
-    <div id="contact" class="social-icons">
-        <a href="https://github.com/kepo402" target="_blank"><i class="fab fa-github"></i></a>
-        <a href="https://web.facebook.com/profile.php?id=100087584152724" target="_blank"><i class="fab fa-facebook"></i></a>
-        <a href="https://twitter.com/KepoAlawode" target="_blank"><i class="fab fa-twitter"></i></a>
-        <a href="https://www.linkedin.com/in/olayinka-alawode-75837121a/" target="_blank"><i class="fab fa-linkedin"></i></a>
-    </div>
+    <section id="about">
+        <h2>About</h2>
+        <!-- About content -->
+    </section>
 
-    <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            const hireButton = document.querySelector('.hire-btn');
-            setInterval(() => {
-                hireButton.classList.toggle('blink');
-            }, 500);
+    <section id="contact">
+        <h2>Contact</h2>
+        <!-- Contact content -->
+    </section>
 
-            const letters = document.querySelectorAll('#animated-text span');
-            const colorsLight = ["black", "red", "blue", "green", "yellow", "purple", "orange"];
-            const colorsDark = ["white", "red", "blue", "green", "yellow", "purple", "orange"];
-            let colorIndex = 0;
-
-            // Color change function
-            function changeColor(colors) {
-                for (let letter of letters) {
-                    letter.style.color = colors[colorIndex];
-                }
-                colorIndex = (colorIndex + 1) % colors.length;
-            }
-
-            // Initial color change
-            changeColor(colorsLight);
-
-            // Set interval for continuous color change
-            setInterval(() => {
-                if (document.body.classList.contains('dark-mode')) {
-                    changeColor(colorsDark);
-                } else {
-                    changeColor(colorsLight);
-                }
-            }, 1000);
-
-            // Letter reveal function
-            let count = 0;
-
-            function revealLetter() {
-                if (count < letters.length) {
-                    letters[count].style.opacity = 1;
-                    count++;
-                } else {
-                    clearInterval(revealInterval);
-                }
-            }
-
-            // Set interval for letter reveal
-            const revealInterval = setInterval(revealLetter, 500);
-
-            // Toggle between light and dark mode
-            const modeToggle = document.getElementById('modeToggle');
-            modeToggle.addEventListener('click', function() {
-                document.body.classList.toggle('dark-mode');
-                if (document.body.classList.contains('dark-mode')) {
-                    document.body.style.backgroundColor = 'black'; // Set background to black in dark mode
-                } else {
-                    document.body.style.backgroundColor = 'white'; // Set background to white in light mode
-                }
-            });
-
-            // Maintain opacity at 0 until redirection
-            window.addEventListener("beforeunload", function() {
-                document.body.style.opacity = 0;
-            });
-        });
-    </script>
-
+    <script src="scripts.js"></script>
 </body>
-
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 

@@ -1,0 +1,72 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.dark-mode {
+  background-color: black;
+  color: white;
+}
+
+.light-mode {
+  background-color: white;
+  color: black;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  background-color: #333;
+  color: white;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+
+nav ul li {
+  margin: 0 1rem;
+}
+
+nav ul li a {
+  color: white;
+  text-decoration: none;
+}
+
+.theme-toggle {
+  cursor: pointer;
+}
+
+#sun {
+  display: none;
+}
+
+.light-mode #sun {
+  display: inline;
+}
+
+.light-mode #moon {
+  display: none;
+}
+
+section {
+  padding: 2rem;
+}
+
+.intro-text {
+  text-align: center;
+  font-size: 2rem;
+  margin-top: 20vh;
+}
+
+#animated-text {
+  color: #ff6347;
+}
+
+
