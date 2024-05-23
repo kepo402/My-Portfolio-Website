@@ -9,6 +9,23 @@ body {
   color: white;
 }
 
+
+.profile-image {
+  position: absolute;
+  top: 50%;
+  right: 5%;
+  transform: translateY(-50%);
+}
+
+.profile-image img {
+  width: 150px; /* Adjust the width as needed */
+  height: 150px; /* Adjust the height as needed */
+  border-radius: 50%; /* Make it round */
+  border: 2px solid white; /* Add border if needed */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Add shadow for better visibility */
+}
+
+
 .light-mode {
   background-color: white;
   color: black;
@@ -55,8 +72,6 @@ nav ul li a {
   display: none;
 }
 
-
-
 .section {
   height: 100vh;
   display: none;
@@ -76,6 +91,43 @@ nav ul li a {
 #animated-text {
   color: #ff6347;
 }
+
+footer {
+  background-color: #333;
+  color: white;
+  text-align: center;
+  padding: 1rem 0;
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+}
+
+.footer-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.social-icons {
+  margin-bottom: 1rem;
+}
+
+.social-icons a {
+  margin: 0 0.5rem;
+  display: inline-block;
+}
+
+.social-icons img {
+  width: 30px;
+  height: 30px;
+  filter: invert(1);
+  transition: transform 0.3s;
+}
+
+.social-icons img:hover {
+  transform: scale(1.1);
+}
+
 
 
 
