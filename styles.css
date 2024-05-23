@@ -55,8 +55,16 @@ nav ul li a {
   display: none;
 }
 
-section {
-  padding: 2rem;
+
+
+.section {
+  height: 100vh;
+  display: none;
+  padding-top: 60px; /* Adjust this value if your nav height changes */
+}
+
+.section.active {
+  display: block;
 }
 
 .intro-text {
@@ -68,5 +76,8 @@ section {
 #animated-text {
   color: #ff6347;
 }
+
+
+
 
 
