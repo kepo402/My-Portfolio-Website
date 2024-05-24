@@ -22,17 +22,10 @@ function toggleTheme() {
 }
 
 function showSection(sectionId) {
-    // Hide all sections
-    document.querySelectorAll('.section').forEach(section => {
-        section.classList.remove('active');
-    });
-
-    // Show the targeted section
-    document.getElementById(sectionId).classList.add('active');
-    
     // Scroll to the targeted section
     document.getElementById(sectionId).scrollIntoView({ behavior: 'smooth' });
 }
+
 
 
 

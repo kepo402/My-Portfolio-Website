@@ -9,7 +9,6 @@ body {
   color: white;
 }
 
-
 .profile-image {
   position: absolute;
   top: 50%;
@@ -24,7 +23,6 @@ body {
   border: 2px solid white; /* Add border if needed */
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Add shadow for better visibility */
 }
-
 
 .light-mode {
   background-color: white;
@@ -73,13 +71,8 @@ nav ul li a {
 }
 
 .section {
-  height: 100vh;
-  display: none;
   padding-top: 60px; /* Adjust this value if your nav height changes */
-}
-
-.section.active {
-  display: block;
+  min-height: 100vh;
 }
 
 .intro-text {
@@ -127,6 +120,7 @@ footer {
 .social-icons img:hover {
   transform: scale(1.1);
 }
+
 
 
 
