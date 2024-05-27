@@ -25,10 +25,3 @@ function showSection(sectionId) {
     // Smoothly scroll to the targeted section
     document.getElementById(sectionId).scrollIntoView({ behavior: 'smooth' });
 }
-
-
-
-
-
-
-
