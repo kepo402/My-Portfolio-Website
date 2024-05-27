@@ -22,6 +22,11 @@ function toggleTheme() {
 }
 
 function showSection(sectionId) {
-    // Smoothly scroll to the targeted section
     document.getElementById(sectionId).scrollIntoView({ behavior: 'smooth' });
 }
+
+document.getElementById('contact-form').addEventListener('submit', function(event) {
+    event.preventDefault();
+    alert('Message sent! Thank you for contacting me.');
+});
+
