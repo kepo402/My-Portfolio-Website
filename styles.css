@@ -17,11 +17,11 @@ body {
 }
 
 .profile-image img {
-  width: 150px; /* Adjust the width as needed */
-  height: 150px; /* Adjust the height as needed */
-  border-radius: 50%; /* Make it round */
-  border: 2px solid white; /* Add border if needed */
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Add shadow for better visibility */
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  border: 2px solid white;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
 }
 
 .light-mode {
@@ -71,7 +71,7 @@ nav ul li a {
 }
 
 .section {
-  padding-top: 60px; /* Adjust this value if your nav height changes */
+  padding-top: 60px;
   min-height: 100vh;
 }
 
@@ -83,6 +83,21 @@ nav ul li a {
 
 #animated-text {
   color: #ff6347;
+}
+
+.about-content {
+  margin: 0 auto;
+  max-width: 600px;
+  text-align: center;
+}
+
+.about-content ul {
+  list-style: none;
+  padding: 0;
+}
+
+.about-content ul li {
+  margin: 0.5rem 0;
 }
 
 footer {
@@ -120,6 +135,8 @@ footer {
 .social-icons img:hover {
   transform: scale(1.1);
 }
+
+
 
 
 

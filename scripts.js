@@ -22,9 +22,11 @@ function toggleTheme() {
 }
 
 function showSection(sectionId) {
-    // Scroll to the targeted section
+    // Smoothly scroll to the targeted section
     document.getElementById(sectionId).scrollIntoView({ behavior: 'smooth' });
 }
+
+
 
 
 
