@@ -85,10 +85,17 @@ nav ul li a {
   color: #ff6347;
 }
 
+.about-section {
+  
+  color: white;
+  padding: 50px 20px;
+}
+
 .about-content {
   margin: 0 auto;
-  max-width: 600px;
+  max-width: 800px;
   text-align: center;
+  font-family: 'Courier New', Courier, monospace;
 }
 
 .about-content ul {
@@ -98,6 +105,24 @@ nav ul li a {
 
 .about-content ul li {
   margin: 0.5rem 0;
+  display: flex;
+  align-items: center;
+  font-size: 1.2rem;
+}
+
+.about-content ul li img {
+  margin-right: 10px;
+  width: 24px;
+  height: 24px;
+}
+
+.about-content p, .about-content li {
+  line-height: 1.6;
+}
+
+.highlight {
+  color: #ffa500;
+  font-weight: bold;
 }
 
 footer {
@@ -135,6 +160,7 @@ footer {
 .social-icons img:hover {
   transform: scale(1.1);
 }
+
 
 
 
