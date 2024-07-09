@@ -29,4 +29,3 @@ document.getElementById('contact-form').addEventListener('submit', function(even
     event.preventDefault();
     alert('Message sent! Thank you for contacting me.');
 });
-
