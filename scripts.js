@@ -41,7 +41,7 @@ document.getElementById('contact-form').addEventListener('submit', function(even
     .then(response => {
         if (response.ok) {
             // Redirect after successful submission
-            window.location.href = 'olayinkaportfolio.vercel.app/thank-you.html';
+            window.location.href = '/thank-you.html';
         } else {
             // Handle server errors
             alert('There was a problem with your submission.');
