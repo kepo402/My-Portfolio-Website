@@ -26,6 +26,30 @@ function showSection(sectionId) {
 }
 
 document.getElementById('contact-form').addEventListener('submit', function(event) {
-    event.preventDefault();
-    alert('Message sent! Thank you for contacting me.');
+    event.preventDefault(); // Prevent the default form submission
+
+    var form = event.target;
+    var formData = new FormData(form);
+
+    fetch(form.action, {
+        method: 'POST',
+        body: formData,
+        headers: {
+            'Accept': 'application/json'
+        }
+    })
+    .then(response => {
+        if (response.ok) {
+            // Redirect after successful submission
+            window.location.href = 'olayinkaportfolio.vercel.app/thank-you.html';
+        } else {
+            // Handle server errors
+            alert('There was a problem with your submission.');
+        }
+    })
+    .catch(error => {
+        console.error('Error:', error);
+        alert('There was a problem with your submission.');
+    });
 });
+
