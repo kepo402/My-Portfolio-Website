@@ -310,10 +310,10 @@ nav ul li a {
 }
 
 footer {
-  background-color: #333;
+  background-color: #222; /* Darker background for more contrast */
   color: white;
   text-align: center;
-  padding: 1rem 0;
+  padding: 0.5rem 0; /* Reduced padding for a shorter height */
   position: fixed;
   width: 100%;
   bottom: 0;
@@ -326,23 +326,25 @@ footer {
 }
 
 .social-icons {
-  margin-bottom: 1rem;
+  margin-bottom: 0.5rem; /* Reduced margin for better spacing */
 }
 
 .social-icons a {
   margin: 0 0.5rem;
   display: inline-block;
+  font-size: 1.5rem; /* Adjust icon size */
+  color: #ffa500; /* Set initial icon color */
+  transition: color 0.3s, transform 0.3s; /* Smooth color and scale transitions */
 }
 
-.social-icons img {
-  width: 30px;
-  height: 30px;
-  filter: invert(1);
-  transition: transform 0.3s;
+.social-icons a:hover {
+  color: #ff6347; /* Change color on hover */
+  transform: scale(1.2); /* Scale up the icon on hover */
 }
 
-.social-icons img:hover {
-  transform: scale(1.1);
+p {
+  margin: 0;
+  font-size: 0.9rem;
 }
 
 .btn {
