@@ -1,0 +1,85 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f5f5f5;
+    color: #333;
+    height: 100vh; /* Full viewport height */
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 15px;
+    text-align: center;
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 15px;
+    font-size: 18px;
+    font-weight: 700;
+    transition: color 0.3s;
+}
+
+nav a:hover {
+    color: #f1c40f;
+}
+
+/* Templates container with centered template blocks */
+.templates-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Responsive grid with min-width for templates */
+    gap: 20px;
+    padding: 20px;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Smaller template container with extra spacing and no border radius */
+.template {
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    text-align: center;
+    transition: transform 0.3s ease;
+    max-width: 300px; /* Smaller max width */
+    margin: 0 auto; /* Center the template block */
+    padding: 10px; /* Added padding for extra space inside the container */
+}
+
+.template:hover {
+    transform: translateY(-10px);
+}
+
+/* Ensuring the image covers the full width and height of the template container */
+.template img {
+    width: 100%;
+    height: 200px; /* Fixed height for the image */
+    object-fit: cover; /* Ensures image covers the container without distorting */
+}
+
+/* Template title styling */
+.template h3 {
+    margin: 10px 0;
+    font-size: 20px;
+}
+
+/* Button styling */
+.btn {
+    display: inline-block;
+    background-color: #3498db;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 700;
+    transition: background-color 0.3s;
+}
+
+.btn:hover {
+    background-color: #2980b9;
+}
+
