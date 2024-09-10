@@ -26,50 +26,80 @@ nav a:hover {
     color: #f1c40f;
 }
 
-.template-detail {
+/* Container for the small image */
+.image-container {
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 20px;
+    justify-content: center; /* Center align image */
+    align-items: center; /* Center vertically if needed */
+    padding: 0; /* Remove padding */
+    width: 60%; /* Set the width of the container */
+    max-width: 400px; /* Max width to prevent it from getting too large */
+    margin: 20px auto; /* Center container horizontally and add top margin */
+    border: 1px solid #ddd; /* Add a border around the container */
+    border-radius: 8px; /* Optional: Add rounded corners */
+    background-color: #fff; /* Optional: Add a background color */
+    overflow: hidden; /* Hide overflow content */
 }
 
-.template-image img {
+.image-container img {
     width: 100%;
-    max-width: 800px;
-    border-radius: 10px;
+    height: auto; /* Maintain aspect ratio */
+    object-fit: contain; /* Ensure the entire image is visible */
+    max-height: 400px; /* Limit the height of the image */
+    margin: 0; /* Remove margin if any */
 }
 
+/* Tech stack container */
 .template-info {
-    max-width: 800px;
-    padding: 20px;
-    text-align: center;
+    text-align: center; /* Center align text */
+    margin: 20px auto; /* Center container horizontally and add top margin */
+    width: 60%; /* Set width for the tech stack container */
+}
+
+.template-info h2 {
+    font-size: 18px; /* Adjust font size */
+    margin-bottom: 8px;
+}
+
+.template-info h3 {
+    font-size: 14px; /* Adjust font size */
+    margin-bottom: 8px;
 }
 
 .template-info ul {
     list-style-type: none;
     padding: 0;
+    margin-bottom: 10px;
 }
 
 .template-info ul li {
-    background-color: #fff;
+    background-color: #2c3e50;
+    color: #ecf0f1;
     margin: 5px 0;
-    padding: 10px;
-    border-radius: 5px;
+    padding: 8px; /* Reduce padding */
+    font-weight: 700;
+    border-left: 5px solid #3498db;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-.btn {
-    display: inline-block;
+/* Buttons container */
+.template-buttons {
+    text-align: center; /* Center align buttons */
+    margin: 20px auto; /* Center container horizontally and add top margin */
+}
+
+.template-buttons .btn {
     background-color: #3498db;
     color: #fff;
-    padding: 10px 20px;
+    padding: 8px 16px; /* Adjust padding */
     border-radius: 5px;
     text-decoration: none;
-    font-size: 16px;
+    font-size: 14px; /* Adjust font size */
     font-weight: 700;
-    margin: 10px;
+    margin-right: 10px; /* Space between the buttons */
     transition: background-color 0.3s;
 }
 
-.btn:hover {
+.template-buttons .btn:hover {
     background-color: #2980b9;
 }
