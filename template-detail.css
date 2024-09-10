@@ -31,29 +31,28 @@ nav a:hover {
     display: flex;
     justify-content: center; /* Center align image */
     align-items: center; /* Center vertically if needed */
-    padding: 0; /* Remove padding */
-    width: 60%; /* Set the width of the container */
-    max-width: 400px; /* Max width to prevent it from getting too large */
+    width: 40%; /* Set the width of the container */
+    max-width: 300px; /* Max width to prevent it from getting too large */
     margin: 20px auto; /* Center container horizontally and add top margin */
     border: 1px solid #ddd; /* Add a border around the container */
     border-radius: 8px; /* Optional: Add rounded corners */
     background-color: #fff; /* Optional: Add a background color */
     overflow: hidden; /* Hide overflow content */
+    padding: 5px; /* Add space around the image */
 }
 
 .image-container img {
     width: 100%;
     height: auto; /* Maintain aspect ratio */
     object-fit: contain; /* Ensure the entire image is visible */
-    max-height: 400px; /* Limit the height of the image */
-    margin: 0; /* Remove margin if any */
+    display: block;
 }
 
 /* Tech stack container */
 .template-info {
     text-align: center; /* Center align text */
     margin: 20px auto; /* Center container horizontally and add top margin */
-    width: 60%; /* Set width for the tech stack container */
+    width: 40%; /* Set width for the tech stack container */
 }
 
 .template-info h2 {
