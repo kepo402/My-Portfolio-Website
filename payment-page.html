@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Page</title>
+    <script src="https://js.paystack.co/v1/inline.js"></script>
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #f5f7fa, #c3cfe2); /* Light gradient background */
+            color: #333;
+        }
+        .container {
+            max-width: 600px;
+            margin: 5% auto;
+            padding: 20px;
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        h1 {
+            font-size: 2em;
+            color: #007bff;
+            margin-bottom: 10px;
+        }
+        p {
+            font-size: 1em;
+            color: #555;
+            margin-bottom: 20px;
+        }
+        .form-group {
+            margin-bottom: 15px;
+            text-align: left;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            color: #333;
+            font-weight: 500;
+        }
+        .form-group input {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-sizing: border-box;
+            font-size: 1em;
+        }
+        .btn {
+            padding: 12px 25px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1em;
+            transition: background-color 0.3s ease;
+        }
+        .btn:hover {
+            background-color: #0056b3;
+        }
+        @media (max-width: 768px) {
+            .container {
+                margin: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Enter Your Email to Proceed</h1>
+        <p>Please enter your email address to continue with the payment.</p>
+        <form id="payment-form">
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <button type="button" class="btn" onclick="payWithPaystack()">Pay to Download</button>
+        </form>
+    </div>
+
+    <script>
+        function payWithPaystack() {
+            const email = document.getElementById('email').value;
+            const urlParams = new URLSearchParams(window.location.search);
+            const amountNGN = parseFloat(urlParams.get('amount'));
+
+            if (!email) {
+                alert('Please enter your email address.');
+                return;
+            }
+
+            if (isNaN(amountNGN)) {
+                alert('Invalid amount.');
+                return;
+            }
+
+            const handler = PaystackPop.setup({
+                key: 'pk_test_4cbd2d827ef3cbc1eb66b1da062a263991480c9f', // Replace with your Paystack public key
+                email: email,
+                amount: amountNGN * 100, // Amount in kobo
+                currency: 'NGN',
+                callback: function (response) {
+                    // Payment was successful
+                    window.location.href = 'thank-you2.html'; // Redirect to a thank you or download page
+                },
+                onClose: function () {
+                    alert('Payment was cancelled');
+                }
+            });
+
+            handler.openIframe();
+        }
+    </script>
+</body>
+</html>
+
