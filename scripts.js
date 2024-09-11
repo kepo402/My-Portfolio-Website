@@ -1,5 +1,4 @@
 document.addEventListener('DOMContentLoaded', (event) => {
-    // Typewriter effect
     let text = "I am Olayinka, a passionate software engineer.";
     let index = 0;
     let colors = ["#ff6347", "#ffa500", "#32cd32", "#1e90ff", "#dda0dd"];
@@ -14,55 +13,42 @@ document.addEventListener('DOMContentLoaded', (event) => {
     }
 
     typeWriter();
+});
 
-    // Toggle theme
-    function toggleTheme() {
-        let body = document.body;
-        body.classList.toggle('dark-mode');
-        body.classList.toggle('light-mode');
-    }
+function toggleTheme() {
+    let body = document.body;
+    body.classList.toggle('dark-mode');
+    body.classList.toggle('light-mode');
+}
 
-    document.getElementById('theme-toggle').addEventListener('click', toggleTheme);
+function showSection(sectionId) {
+    document.getElementById(sectionId).scrollIntoView({ behavior: 'smooth' });
+}
 
-    // Smooth scroll for section links
-    function showSection(sectionId) {
-        document.getElementById(sectionId).scrollIntoView({ behavior: 'smooth' });
-    }
+document.getElementById('contact-form').addEventListener('submit', function(event) {
+    event.preventDefault(); // Prevent the default form submission
 
-    // Handle form submission
-    document.getElementById('contact-form').addEventListener('submit', function(event) {
-        event.preventDefault(); // Prevent the default form submission
+    var form = event.target;
+    var formData = new FormData(form);
 
-        var form = event.target;
-        var formData = new FormData(form);
-
-        fetch(form.action, {
-            method: 'POST',
-            body: formData,
-            headers: {
-                'Accept': 'application/json'
-            }
-        })
-        .then(response => {
-            if (response.ok) {
-                // Redirect after successful submission
-                window.location.href = '/thank-you.html';
-            } else {
-                // Handle server errors
-                alert('There was a problem with your submission.');
-            }
-        })
-        .catch(error => {
-            console.error('Error:', error);
+    fetch(form.action, {
+        method: 'POST',
+        body: formData,
+        headers: {
+            'Accept': 'application/json'
+        }
+    })
+    .then(response => {
+        if (response.ok) {
+            // Redirect after successful submission
+            window.location.href = '/thank-you.html';
+        } else {
+            // Handle server errors
             alert('There was a problem with your submission.');
-        });
-    });
-
-    // Hamburger menu toggle
-    const hamburger = document.getElementById('hamburger-menu');
-    const navLinks = document.querySelector('nav ul');
-
-    hamburger.addEventListener('click', function() {
-        navLinks.classList.toggle('active');
+        }
+    })
+    .catch(error => {
+        console.error('Error:', error);
+        alert('There was a problem with your submission.');
     });
 });
