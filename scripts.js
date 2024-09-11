@@ -1,4 +1,5 @@
 document.addEventListener('DOMContentLoaded', (event) => {
+    // Typewriter Effect
     let text = "I am Olayinka, a passionate software engineer.";
     let index = 0;
     let colors = ["#ff6347", "#ffa500", "#32cd32", "#1e90ff", "#dda0dd"];
@@ -13,6 +14,15 @@ document.addEventListener('DOMContentLoaded', (event) => {
     }
 
     typeWriter();
+
+    // Hamburger Menu Toggle
+    const hamburgerMenu = document.querySelector('.hamburger-menu');
+    const navLinks = document.querySelector('nav ul');
+
+    hamburgerMenu.addEventListener('click', () => {
+        navLinks.classList.toggle('active');
+        hamburgerMenu.classList.toggle('active');
+    });
 });
 
 function toggleTheme() {
