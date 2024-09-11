@@ -441,11 +441,17 @@ p {
   }
 
   .profile-image {
-    position: static; /* Change position to avoid overlap */
-    margin: 0 auto; /* Center the profile image */
-    display: block; /* Ensure it is displayed as a block element */
+    position: absolute; /* Absolute positioning to move image */
+    top: 0; /* Move image to top */
+    right: 0; /* Align image to the right */
+    margin: 0; /* Remove margin */
     transform: none; /* Remove vertical alignment transformation */
-    width: 120px; /* Adjust size for smaller screens */
-    height: 120px;
+    width: 100px; /* Adjust size for smaller screens */
+    height: 100px;
+    z-index: 1; /* Ensure the image is positioned correctly */
+  }
+
+  #animated-text {
+    margin-top: 120px; /* Add margin-top to ensure text is visible below the image */
   }
 }
