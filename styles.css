@@ -42,6 +42,7 @@ nav .hamburger-menu {
   display: none;
   flex-direction: column;
   cursor: pointer;
+  margin-right: 20px;
 }
 
 nav .hamburger-menu .bar {
@@ -378,26 +379,10 @@ p {
   background-color: #e55347;
 }
 
-/* Hamburger Menu Styles */
-.hamburger-menu {
-  display: none;
-  flex-direction: column;
-  cursor: pointer;
-  margin-right: 20px;
-}
-
-.hamburger-menu .bar {
-  background-color: #fff;
-  height: 3px;
-  width: 25px;
-  margin: 3px 0;
-  transition: 0.3s;
-}
-
-/* Mobile Styles */
+/* Mobile Styles for screens <= 768px */
 @media (max-width: 768px) {
   nav ul {
-    display: none;
+    display: none; /* Hide nav links by default */
     flex-direction: column;
     width: 100%;
     background-color: #333;
@@ -407,11 +392,11 @@ p {
   }
 
   nav ul.active {
-    display: flex;
+    display: flex; /* Show nav links when active */
   }
 
   nav .hamburger-menu {
-    display: flex;
+    display: flex; /* Show hamburger menu */
   }
 
   nav ul li {
@@ -432,5 +417,20 @@ p {
 
   .hamburger-menu.active .bar:nth-child(3) {
     transform: rotate(45deg) translate(-5px, -6px);
+  }
+}
+
+/* Additional Mobile Styles for screens <= 500px */
+@media (max-width: 500px) {
+  nav {
+    padding: 0.5rem; /* Adjust padding if needed */
+  }
+
+  nav .hamburger-menu .bar {
+    width: 20px; /* Adjust bar width for smaller screens */
+  }
+
+  nav ul {
+    top: 50px; /* Adjust position if needed */
   }
 }
