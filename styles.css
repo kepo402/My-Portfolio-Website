@@ -9,6 +9,7 @@ body {
   top: 50%;
   right: 5%;
   transform: translateY(-50%);
+  z-index: 1; /* Ensure the image is behind the text */
 }
 
 .profile-image img {
@@ -432,5 +433,19 @@ p {
 
   nav ul {
     top: 50px; /* Adjust position if needed */
+  }
+
+  .intro-text {
+    font-size: 1.5rem; /* Adjust text size for smaller screens */
+    margin-top: 10vh; /* Adjust margin-top to fit smaller screens */
+  }
+
+  .profile-image {
+    position: static; /* Change position to avoid overlap */
+    margin: 0 auto; /* Center the profile image */
+    display: block; /* Ensure it is displayed as a block element */
+    transform: none; /* Remove vertical alignment transformation */
+    width: 120px; /* Adjust size for smaller screens */
+    height: 120px;
   }
 }
