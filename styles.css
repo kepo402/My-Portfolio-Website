@@ -9,7 +9,6 @@ body {
   top: 50%;
   right: 5%;
   transform: translateY(-50%);
-  z-index: 1; /* Ensure the image is behind the text */
 }
 
 .profile-image img {
@@ -442,16 +441,15 @@ p {
 
   .profile-image {
     position: absolute; /* Absolute positioning to move image */
-    top: 0; /* Move image to top */
-    right: 0; /* Align image to the right */
-    margin: 0; /* Remove margin */
-    transform: none; /* Remove vertical alignment transformation */
+    top: 50%; /* Keep image aligned vertically centered */
+    right: 5%; /* Maintain image's right alignment */
+    transform: translateY(-50%); /* Center image vertically */
     width: 100px; /* Adjust size for smaller screens */
     height: 100px;
     z-index: 1; /* Ensure the image is positioned correctly */
   }
 
   #animated-text {
-    margin-top: 120px; /* Add margin-top to ensure text is visible below the image */
+    margin-top: 150px; /* Add margin-top to ensure text is visible below the image */
   }
 }
