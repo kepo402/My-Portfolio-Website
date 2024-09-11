@@ -443,6 +443,7 @@ p {
     position: absolute; /* Absolute positioning to move image */
     top: 50%; /* Keep image aligned vertically centered */
     right: 5%; /* Maintain image's right alignment */
+    left: 50%;
     transform: translateY(-50%); /* Center image vertically */
     width: 100px; /* Adjust size for smaller screens */
     height: 100px;
