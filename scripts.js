@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', (event) => {
     // Typewriter Effect
-    let text = "I am Olayinka, a passionate software engineer.";
+    let text = "I am Olayinka, a passionate software engineer";
     let index = 0;
     let colors = ["#ff6347", "#ffa500", "#32cd32", "#1e90ff", "#dda0dd"];
     let animatedText = document.getElementById('animated-text');
