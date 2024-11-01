@@ -88,15 +88,13 @@ nav ul li a {
 .section {
   padding-top: 60px;
   min-height: 100vh;
-  
-  transform: translateY(20px); /* Move the section down by 20px */
+  transform: translateY(20px);
   transition: opacity 0.6s ease-out, transform 0.6s ease-out;
 }
 
-
 .section.visible {
   opacity: 1;
-  transform: translateY(0); /* Reset position */
+  transform: translateY(0);
 }
 
 .intro-text {
@@ -164,31 +162,48 @@ nav ul li a {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 2rem;
+  gap: 20px; /* Adjust gap for space between project cards */
 }
 
 .project {
+  position: relative; /* Ensure absolute positioning of inner elements works */
   display: flex;
   flex-direction: column;
   align-items: center;
   max-width: 300px;
   background-color: #444;
   padding: 1rem;
-  /* border-radius: 8px; Remove this line for no border radius */
   text-align: center;
   transition: transform 0.3s;
+  overflow: hidden; /* Ensure content doesn't overflow */
 }
 
 .project img {
-  width: 100%;
-  height: 200px; /* Set a fixed height for the images */
+  width: 80%; /* Ensure images are small */
+  height: auto; /* Maintain aspect ratio */
+  max-height: 150px; /* Limit height for uniformity */
   object-fit: cover; /* Ensure the aspect ratio is maintained */
-  /* border-radius: 8px; Remove this line for no border radius */
 }
-
 
 .project-info {
   margin-top: 1rem;
+  opacity: 0; /* Initially hide project info */
+  transition: opacity 0.3s ease; /* Smooth transition for visibility */
+  position: absolute; /* Position absolutely within the project */
+  bottom: 0; /* Align to bottom of project */
+  left: 0;
+  right: 0;
+  text-align: center; /* Center text */
+  background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent background */
+  padding: 10px; /* Padding for inner content */
+}
+
+.project:hover {
+  transform: scale(1.05);
+}
+
+.project:hover .project-info {
+  opacity: 1; /* Show project info on hover */
 }
 
 .project-info h3 {
@@ -209,10 +224,6 @@ nav ul li a {
 
 .project-info .highlight {
   font-weight: bold;
-}
-
-.project:hover {
-  transform: scale(1.05);
 }
 
 .buttons {
@@ -270,7 +281,8 @@ nav ul li a {
   height: 24px;
 }
 
-.about-content p, .about-content li {
+.about-content p,
+.about-content li {
   line-height: 1.6;
 }
 
@@ -311,7 +323,8 @@ nav ul li a {
   margin-bottom: 0.5rem;
 }
 
-.contact-form input, .contact-form textarea {
+.contact-form input,
+.contact-form textarea {
   width: 98%;
   padding: 0.5rem;
   border: none;
@@ -335,10 +348,10 @@ nav ul li a {
 }
 
 footer {
-  background-color: #222; /* Darker background for more contrast */
+  background-color: #222;
   color: white;
   text-align: center;
-  padding: 0.5rem 0; /* Reduced padding for a shorter height */
+  padding: 0.5rem 0;
   position: fixed;
   width: 100%;
   bottom: 0;
@@ -351,20 +364,20 @@ footer {
 }
 
 .social-icons {
-  margin-bottom: 0.5rem; /* Reduced margin for better spacing */
+  margin-bottom: 0.5rem;
 }
 
 .social-icons a {
   margin: 0 0.5rem;
   display: inline-block;
-  font-size: 1.5rem; /* Adjust icon size */
-  color: #ffa500; /* Set initial icon color */
-  transition: color 0.3s, transform 0.3s; /* Smooth color and scale transitions */
+  font-size: 1.5rem;
+  color: #ffa500;
+  transition: color 0.3s, transform 0.3s;
 }
 
 .social-icons a:hover {
-  color: #ff6347; /* Change color on hover */
-  transform: scale(1.2); /* Scale up the icon on hover */
+  color: #ff6347;
+  transform: scale(1.2);
 }
 
 p {
