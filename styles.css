@@ -1,24 +1,28 @@
+/* Body and overall styles */
 body {
   margin: 0;
   font-family: Arial, sans-serif;
   transition: background-color 0.3s, color 0.3s;
 }
 
+/* Profile Image Styles */
 .profile-image {
   position: absolute;
   top: 50%;
   right: 5%;
   transform: translateY(-50%);
+  z-index: 1; /* Ensure the image is on top */
 }
 
 .profile-image img {
-  width: 150px;
-  height: 150px;
+  width: 100px; /* Set width */
+  height: 100px; /* Set height */
   border-radius: 50%;
   border: 2px solid white;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
 }
 
+/* Dark and Light Mode Styles */
 .dark-mode {
   background-color: black;
   color: white;
@@ -29,6 +33,7 @@ body {
   color: black;
 }
 
+/* Navigation Styles */
 nav {
   display: flex;
   justify-content: space-between;
@@ -73,6 +78,7 @@ nav ul li a {
   cursor: pointer;
 }
 
+/* Sun and Moon Icons */
 #sun {
   display: none;
 }
@@ -85,6 +91,7 @@ nav ul li a {
   display: none;
 }
 
+/* Section Styles */
 .section {
   padding-top: 60px;
   min-height: 100vh;
@@ -97,16 +104,19 @@ nav ul li a {
   transform: translateY(0);
 }
 
+/* Intro Text Styles */
 .intro-text {
   text-align: center;
   font-size: 2rem;
-  margin-top: 20vh;
+  margin-top: 10vh; /* Adjust margin to bring text closer to image */
 }
 
+/* Animated Text */
 #animated-text {
   color: #ff6347;
 }
 
+/* Skills Section */
 .skills-section {
   padding: 50px 20px;
 }
@@ -124,6 +134,7 @@ nav ul li a {
   gap: 2rem;
 }
 
+/* Skill Styles */
 .skill {
   display: flex;
   flex-direction: column;
@@ -148,8 +159,10 @@ nav ul li a {
   transform: scale(1.1);
 }
 
+/* Projects Section */
 .projects-section {
   padding: 50px 20px;
+  position: relative; /* Make this relative for absolute children */
 }
 
 .projects-section h2 {
@@ -162,29 +175,30 @@ nav ul li a {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 20px; /* Adjust gap for space between project cards */
+  gap: 0; /* Set gap to 0 to bring cards closer */
 }
 
+/* Project Styles */
 .project {
   position: relative; /* Ensure absolute positioning of inner elements works */
   display: flex;
   flex-direction: column;
   align-items: center;
-  max-width: 300px;
+  max-width: 300px; /* This can be adjusted based on your layout needs */
+  height: 200px; /* Set a height for the project container */
   background-color: #444;
-  padding: 1rem;
-  text-align: center;
-  transition: transform 0.3s;
   overflow: hidden; /* Ensure content doesn't overflow */
+  transition: transform 0.3s;
+  margin: 20px; /* Add margin around each project container */
 }
 
 .project img {
-  width: 80%; /* Ensure images are small */
-  height: auto; /* Maintain aspect ratio */
-  max-height: 150px; /* Limit height for uniformity */
-  object-fit: cover; /* Ensure the aspect ratio is maintained */
+  width: 100%; /* Set to 100% to fill the container */
+  height: 100%; /* Set to 100% to fill the container */
+  object-fit: cover; /* Ensure the image covers the entire area */
 }
 
+/* Project Info Visibility */
 .project-info {
   margin-top: 1rem;
   opacity: 0; /* Initially hide project info */
@@ -207,18 +221,18 @@ nav ul li a {
 }
 
 .project-info h3 {
-  font-size: 1.5rem;
+  font-size: 1.2rem; /* Adjusted to fit */
   color: #ffa500;
 }
 
 .project-info .description {
-  font-size: 1rem;
+  font-size: 0.8rem; /* Adjusted to fit */
   margin: 0.5rem 0;
   color: #ddd;
 }
 
 .project-info .stack {
-  font-size: 1rem;
+  font-size: 0.8rem; /* Adjusted to fit */
   color: #ff6347;
 }
 
@@ -226,6 +240,7 @@ nav ul li a {
   font-weight: bold;
 }
 
+/* Button Styles */
 .buttons {
   display: flex;
   justify-content: center;
@@ -246,6 +261,7 @@ nav ul li a {
   background-color: #ff6347;
 }
 
+/* About Section */
 .about-section {
   padding: 50px 20px;
 }
@@ -286,11 +302,13 @@ nav ul li a {
   line-height: 1.6;
 }
 
+/* Highlight Class */
 .highlight {
   color: #ffa500;
   font-weight: bold;
 }
 
+/* Contact Section */
 .contact-section {
   padding: 50px 20px;
   text-align: center;
@@ -347,6 +365,7 @@ nav ul li a {
   background-color: #ff6347;
 }
 
+/* Footer Styles */
 footer {
   background-color: #222;
   color: white;
@@ -363,6 +382,7 @@ footer {
   align-items: center;
 }
 
+/* Social Icons */
 .social-icons {
   margin-bottom: 0.5rem;
 }
@@ -380,11 +400,13 @@ footer {
   transform: scale(1.2);
 }
 
+/* Paragraph Styles */
 p {
   margin: 0;
   font-size: 0.9rem;
 }
 
+/* Button Class */
 .btn {
   display: inline-block;
   padding: 10px 20px;
@@ -465,9 +487,7 @@ p {
   .profile-image {
     position: absolute; /* Absolute positioning to move image */
     top: 50%; /* Keep image aligned vertically centered */
-    right: 5%; /* Maintain image's right alignment */
-    left: 50%;
-    transform: translateY(-50%); /* Center image vertically */
+    right: 5%;
     width: 100px; /* Adjust size for smaller screens */
     height: 100px;
     z-index: 1; /* Ensure the image is positioned correctly */
