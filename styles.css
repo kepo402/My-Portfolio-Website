@@ -8,7 +8,7 @@ body {
 /* Profile Image Styles */
 .profile-image {
   position: absolute;
-  top: 50%;
+  top: 5%;
   right: 5%;
   transform: translateY(-50%);
   z-index: 1; /* Ensure the image is on top */
@@ -477,6 +477,7 @@ p {
 
   nav ul {
     top: 50px; /* Adjust position if needed */
+    z-index: 1000; /* Make sure the menu is above everything else */
   }
 
   .intro-text {
@@ -484,9 +485,11 @@ p {
     margin-top: 10vh; /* Adjust margin-top to fit smaller screens */
   }
 
+
+
   .profile-image {
     position: absolute; /* Absolute positioning to move image */
-    top: 50%; /* Keep image aligned vertically centered */
+    top: 8%; /* Keep image aligned vertically centered */
     right: 5%;
     width: 100px; /* Adjust size for smaller screens */
     height: 100px;
